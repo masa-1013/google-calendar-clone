@@ -15,6 +15,17 @@ services:
       - port=3000
       - CHOKIDAR_USEPOLLING=true
     command: sh -c "yarn install && yarn run dev"
-
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - mysql-data:/var/lib/mysql
 volumes:
   node_modules:
+  mysql-data:
