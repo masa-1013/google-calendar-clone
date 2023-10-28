@@ -1,5 +1,7 @@
 <script setup lang="ts">
-  const hours = Array.from({ length: 24 }, (_, i) => i)
+  const props = defineProps<{
+    hours: number[]
+  }>()
 
   const change24HourToAmPm = (hour: number) => {
     if (hour < 12) {
@@ -15,7 +17,7 @@
 </script>
 <template>
   <div class="w-24"></div>
-  <template v-for="hour in hours" :key="hour">
+  <template v-for="hour in props.hours" :key="hour">
     <div class="h-16 text-xs text-right">
       {{ change24HourToAmPm(hour) }}
     </div>

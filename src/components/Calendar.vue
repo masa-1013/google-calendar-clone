@@ -19,7 +19,7 @@
       <DateDisplay :days="days" />
     </div>
     <div class="row-span-1 col-span-1">
-      <TimeDisplay />
+      <TimeDisplay :hours="hours" />
     </div>
     <div class="row-span-1 col-span-1">
       <CalendarField :hours="hours" :days="days" />
