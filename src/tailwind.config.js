@@ -7,7 +7,11 @@ export default {
     './pages/**/*.vue'
   ],
   theme: {
-    extend: {}
+    extend: {
+      gridTemplateColumns: {
+        custom: '96px minmax(200px, 1fr)'
+      }
+    }
   },
   plugins: []
 }
